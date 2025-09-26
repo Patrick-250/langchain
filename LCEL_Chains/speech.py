@@ -32,7 +32,7 @@ speech_template=PromptTemplate(
 
 
 
-first_chain=title_template | llm | StrOutputParser()
+first_chain=title_template | llm | StrOutputParser() | (lambda title: (st.write(title),title)[1])
 second_chain=speech_template | llm 
 final_chain=first_chain | second_chain 
 
