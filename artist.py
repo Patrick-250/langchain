@@ -29,7 +29,7 @@ st.title("ask your AI writer/singer")
 country=st.text_input("Enter your country and press enter")
 number_of_words=st.number_input("enter no of words for ur song", min_value=1,max_value=40)
 
-if country:
+if country and number_of_words:
     response=model.invoke(prompt_template.format(country=country,number_of_words=number_of_words))
     st.write(response.content)
 
